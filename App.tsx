@@ -91,7 +91,7 @@ export default function App() {
         })}
       >
         <Tab.Screen name="Map">
-          {(props) => <MapScreen {...props} towers={towers} currentLocation={currentLocation} />}
+          {(props) => <MapScreen {...props} towers={towers} currentLocation={currentLocation} refreshTowers={fetchTowers}/>}
         </Tab.Screen>
         <Tab.Screen name="Towers">
           {(props) => <TowersListScreen {...props} towers={towers} refreshTowers={fetchTowers} />}
