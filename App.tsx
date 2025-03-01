@@ -13,7 +13,7 @@ import TowersListScreen from './screens/TowersListScreen';
 import FormsScreen from './screens/FormsScreen';
 
 // Import constants
-import { API_URL } from './constants/api';
+import { API_URL, USER_ID } from './constants/api';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +22,7 @@ export default function App() {
   const [currentLocation, setCurrentLocation] = useState<Coordinates | null>(null);
 
   const fetchTowers = () => {
-    fetch(`${API_URL}/towers`)
+    fetch(`${API_URL}/users/${USER_ID}/towers`)
       .then(response => response.json())
       .then((data: Tower[]) => {
         console.log('Towers fetched:', data);
